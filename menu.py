@@ -1,5 +1,11 @@
 import pygame.image
 import pygame
+from pygame.font import Font
+from pygame.rect import Rect
+from pygame.surface import Surface
+
+from const import WIN_WIDTH, ORANGE_COLOR, MENU_OPTION, WHITE_COLOR
+
 
 class Menu:
     def __init__(self, window):
@@ -11,9 +17,13 @@ class Menu:
         pygame.mixer_music.play(-1)  # da play / -1 fica em loop
 
         while True:
-            self.window.blit(source=self.surf, dest=self.rect) #desenha a imagem
+            self.window.blit(source=self.surf, dest=self.rect)  # desenha a imagem
+            self.menu_text(50,'Mountain',ORANGE_COLOR,((WIN_WIDTH/2), 70))
+            self.menu_text(50, 'Shooter', ORANGE_COLOR, ((WIN_WIDTH / 2), 120))
+            for i in range (len(MENU_OPTION)):
+                self.menu_text(20, MENU_OPTION[i], WHITE_COLOR, ((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip() #recarrega a janela
-            # chek for all events
+            # verifica os eventos
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()  # fecha a janela
