@@ -6,6 +6,8 @@ WIN_HEIGHT = 324
 ORANGE_COLOR = (255,128,0)
 #cor branca
 WHITE_COLOR = (255,255,255)
+#cor amarela
+YELLOW_COLOR = (255,255,0)
 
 #menu
 MENU_OPTION = ('NEW GAME - 1P',
